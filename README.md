@@ -17,7 +17,7 @@ localhost:5000/login
 <meta name="google-signin-client_id" content="YOUR CLIENT ID">
 You have to have your client id and paste it to the tag being showed above.
 
-You reach more details about the project by following link:
+You can reach more details about the project by following the link:
 
 https://javascript.plainenglish.io/authentication-with-google-sign-in-in-node-js-419640f07b56
 
