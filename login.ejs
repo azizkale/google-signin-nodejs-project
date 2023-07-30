@@ -1,36 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-scope" content="profile email" />
-    <meta
-      name="google-signin-client_id"
-      content="your_google-signin-client_id_here"
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <title>Google-Sing-In</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
+  <body class="h-screen flex flex-col items-center justify-center">
+    <div
+      class="mx-auto flex w-full max-w-sm flex-col items-center space-y-4 rounded-xl border-transparent bg-white px-2 py-1 dark:bg-transparent md:w-8/12 md:border md:px-8 md:py-6 lg:w-5/12 lg:px-6 lg:shadow-xl dark:lg:border-black-400 lg:dark:bg-black-500 dark:lg:shadow-[0_0_1200px_0] lg:dark:shadow-primary-400/20 xl:w-4/12 2xl:w-3/12"
+    >
+      <div>
+        <h6>
+          <span class="font-medium">Sign In to your account</span>
+        </h6>
+      </div>
 
-  <body>
-    <h1>LOGIN</h1>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
-    <script>
-      function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log("Name: " + profile.getName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
-      }
+      <div class="w-full xl:max-w-lg">
+        <div class="flex-col space-y-2">
+          <div
+            id="g_id_onload"
+            data-client_id="309216164998-gllupkuk5gmfhd0hkmld48pp41hk67km.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-login_uri="https://88d2-217-138-206-85.ngrok-free.app/login"
+            data-nonce=""
+            data-auto_select="true"
+            data-itp_support="true"
+          ></div>
 
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log("User signed out.");
-        });
-      }
-    </script>
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left"
+          ></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
